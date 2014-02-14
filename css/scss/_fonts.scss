@@ -1,0 +1,21 @@
+@mixin lucida-regular {
+	// font-family:'Lucida$ Sans W01 Roman';
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+.lucida-regular {
+	// @include lucida-regular;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+@mixin lucida-bold {
+	//font-family:'Lucida$ Sans W01 Bold';
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.lucida-bold {
+	@include lucida-bold;
+}

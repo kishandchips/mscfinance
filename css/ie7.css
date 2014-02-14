@@ -1,0 +1,9 @@
+.icons-arrow-right {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe600;');
+}
+.icons-arrow-left {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe601;');
+}
+.icons-down_arrow {
+	*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe602;');
+}
