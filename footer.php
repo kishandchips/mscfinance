@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="bottom-nav">
-				<span class="copyright">&copy; <?php bloginfo( 'name' ); ?></span>
+				<span class="copyright">&copy; <?php _e( 'Henley Business School' ); ?></span>
 				<?php wp_nav_menu( array( 'theme_location' => 'secondary_footer', 'menu_class' => 'clearfix menu', 'container' => false ) ); ?>
 				
 			</div>
@@ -28,7 +28,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php if( get_field('want_lightbox')): ?>
-	<div id="lightbox" data-delay="<?php the_field('lightbox_delay') ?>">
+	<div id="lightbox" class="popupbox" data-delay="<?php the_field('lightbox_delay') ?>">
 		<div id="lightbox-inner">
 			<div class="container">
 				<div class="span ten">
@@ -45,13 +45,19 @@
 	</div>
 <?php endif; ?>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=579639135402354";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<!-- responseTAP -->
+<script type="text/javascript">
+   var adiInit = "11043", adiRVO = true;
+   var adiFunc = null;
+   (function() {
+      var adiSrc = document.createElement("script"); adiSrc.type = "text/javascript";
+      adiSrc.async = true;
+      adiSrc.src = ("https:" == document.location.protocol ? "https://static-ssl" : "http://static-cdn")
+      	+ ".responsetap.com/static/scripts/rTapTrack.min.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(adiSrc, s);
+   })();
+</script>
+<!--end of responseTAP -->
 </body>
 </html>

@@ -54,30 +54,23 @@
 
 			$(".gform_widget select").selecter();
 
-	        if($.fn.prettyPhoto){
-        		$('#lightbox').hide();
-
-        		var prettyPhotoOptions = {
-					social_tools: false,
-					theme: 'light_square', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
-					horizontal_padding: 0,
-					opacity: 0.9,
-					deeplinking: false,
-					show_title: false,
-					default_width: 850
-					//callback: function() { $('body').removeClass('noscroll'); }
-				}	
-
-				$('a.zoom').prettyPhoto(prettyPhotoOptions);
-
+			if($.fn.colorbox){
 				if( $('#lightbox').length > 0 && $(window).width() > 900 ){
 					var delay = $('#lightbox').data('delay');
 					setTimeout(function() {
-						$.prettyPhoto.open('#lightbox');
-						// $('body').addClass('noscroll');		
+						$.colorbox({
+							inline:true,
+							href:"#lightbox-inner"
+						});
 					}, delay);	
-				}											
-	        }
+				}				
+
+				$('.popupbox #call-now .button').on('click', function(event) {
+					event.preventDefault();
+					$('#call-box #cloudIqClickButton').click();
+				});
+			}
+
 
 	        $('#content table').wrap( "<div class='scroll-table'></div>" );
 

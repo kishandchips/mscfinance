@@ -158,3 +158,42 @@ if ( ! function_exists( 'get_current_url' )) {
 		return $url;
 	}
 }
+
+add_action('gform_after_submission', 'send_lead_form_data', 10, 2);
+function send_lead_form_data($entry, $form){
+
+	$service_url = 'http://services.academicpartnerships.com/APUniversityDataWebAPI/api/Lead/PostLead';
+	$curl = curl_init($service_url);
+
+	$curl_post_data = array(
+		'FirstName' => $entry['1'],
+		'LastName' => $entry['2'],
+		'HomePhoneNumber' => ($entry['9'] == 'Home') ? $entry['4'] : '',
+		'CellPhoneNumber' => ($entry['9'] == 'Mobile') ? $entry['4'] : '',
+		'OtherPhoneNumber' => ($entry['9'] == 'Office') ? $entry['4'] : '',
+		'HomeEmail' => $entry['3'],
+		'WorkEmail' => '',
+		'InstitutionCode' => $entry['12'],
+		'ProgramCode' => $entry['13'],
+		'IndustryVerticalCode' => $entry['14'],
+		'Source' => $entry['10'],
+		'SubSource' => $entry['11'],
+		'CountryCode' => $entry['8'],
+		'PostalCode' => '',
+		'ExportToCrm' => true,
+		'ExpressedConsent' => true
+    );
+
+	// print_r($curl_post_data);    
+  
+ 	$curl_post_data = json_encode($curl_post_data);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);	
+	curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
+	$curl_response = curl_exec($curl);
+
+	// echo '<response>';
+	// print_r($curl_response);
+	// echo '</response>';
+}

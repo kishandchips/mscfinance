@@ -42,18 +42,16 @@ body {
 
 	#top-nav {
 		color: #666666;
-		height: 20px;
 		overflow: hidden;
 		margin-top: 10px;
 
 		@include device-width(7) {
-			margin: 0 auto;
-			width: 350px;
+			margin: 20px auto 0;
+			width: 360px;
 		}
 
 		@include device-width(4) {
-			width: 278px;
-			height: 35px;
+			width: 290px;
 		}
 
 		#menu-header-top-nav {
@@ -76,8 +74,30 @@ body {
 			}
 		}
 
+		.phones {
+			font-weight: bold; 
+			@include font-size(12);
+			width: 250px;
+			text-align: left;
+			float: right;
+
+			@include device-width(8) {		
+				width: 290px;
+			}
+
+			@include device-width(7) {
+				margin-top: 20px;
+				width: 100%;
+				text-align: center;		
+			}		
+
+			span {
+				font-weight: normal;
+			}
+		}		
+
 		.socials {
-			width: 277px;
+			width: 288px;
 			float: right;
 
 			div {
@@ -880,39 +900,43 @@ body {
 	@extend .clearfix;
 
 	h1.phone-number {
-		@include font-size(30);
+		@include font-size(25);
 		margin: 0;
+		letter-spacing: -2px;
+
+		@media only screen and (max-width: 1170px){
+			@include font-size(22);
+		}
 
 		@include device-width(11) {
+			@include font-size(20);
+		}						
+
+		@media only screen and (max-width: 975px){	
+			@include font-size(15);
+		}
+
+		@include device-width(7) {
 			@include font-size(25);
 		}
 
-		@include device-width(9) {
-			@include font-size(20);
-		}		
-
-		@include device-width(8) {
-			@include font-size(17);
-		}		
-
-		@include device-width(7) {
-			@include font-size(30);
-		}	
-
 		@include device-width(6) {
-			@include font-size(25);
-		}	
+			@include font-size(20);
+		}
 
 		@include device-width(5) {
-			@include font-size(30);
-		}						
+			@include font-size(25);
+		}		
+
 	}
 
-	.button{
+	#cloudIqPopupButton {
 		margin: 30px 0 0 0;
 		display: inline-block;
 		@extend .right;
+		position: static;
 	}
+	
 	p {
 		margin: 0 !important;
 	}
@@ -921,6 +945,10 @@ body {
 		font-weight: bold;
 		color: #123d8d;
 	}	
+}
+
+#cloudIqPopups {
+	@include box-shadow(0px 0px 30px 0px #000);
 }
 
 

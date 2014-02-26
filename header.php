@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html xmlns:fb="http://ogp.me/ns/fb#" class="no-js"> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
@@ -14,7 +19,7 @@
 			wp_enqueue_script('scroller', get_template_directory_uri().'/js/plugins/jquery.scroller.js');	
 			wp_enqueue_script('easing', get_template_directory_uri().'/js/plugins/jquery.easing.js');
 			wp_enqueue_script('selecter', get_template_directory_uri().'/js/plugins/jquery.fs.selecter.min.js');
-			wp_enqueue_script('prettyPhoto', get_template_directory_uri().'/js/plugins/jquery.prettyphoto.js');
+			wp_enqueue_script('prettyPhoto', get_template_directory_uri().'/js/plugins/jquery.colorbox-min.js');
 			wp_enqueue_script('main', get_template_directory_uri().'/js/main.js');
 		}
 		add_action('wp_enqueue_scripts', 'load_assets');
@@ -57,19 +62,36 @@ cc.initialise({
 	$curr_page_id = $curr_page->ID;
 ?>
 <body <?php body_class(); ?>>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "http:/connect.facebook.net/en_GB/all.js#xfbml=1&appId=579639135402354";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
 	<div id="page">
 		<div class="container">
 			<div id="top-nav" class="clearfix">
 				<div class="socials">
-					<div class="fb-like" data-href="https://www.facebook.com/henleymba" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
+				<div class="fb-like" data-href="https://www.facebook.com/henleymba" data-layout="button_count"></div>
 					<div class="g-plusone" data-size="medium" data-href="<?php bloginfo( 'url' ); ?>"></div>
 					<div class="tweet-button"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 					</div>
 				</div>
 					<?php wp_nav_menu( array( 'theme_location' => 'header_top_nav', 'menu_class' => 'clearfix menu', 'container' => false ) ); ?>
+					<div class="phones">
+						Freephone: 
+						<span class="rTapNumber72710">07595292684</span>	
+						<br>
+						International:
+					  	<span class="rTapNumber72713">07595292684</span>			
+					</div>				
 			</div>		
-			
 		</div>
 		<header id="header" role="banner">
 			<div class="container">				
