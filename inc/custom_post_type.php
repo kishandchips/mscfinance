@@ -94,7 +94,7 @@ class Custom_Post_Type
 				$taxonomy_name		= strtolower( str_replace( ' ', '_', $name ) );
 				$taxonomy_labels	= $labels;
 				$taxonomy_args		= $args;
-
+	
 				if( ! taxonomy_exists( $taxonomy_name ) )
 					{
 						//Capitilize the words and make it plural

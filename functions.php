@@ -97,6 +97,30 @@ function get_mscfinance_option($option){
 	return $options[$option];
 }
 
+add_action('init', 'set_custom_post_types');
+
+if(!function_exists('set_custom_post_types')) {
+	function set_custom_post_types(){
+		require( get_template_directory() . '/inc/custom_post_type.php' );
+
+		$news = new Custom_Post_Type( 'News Item', 
+	 		array(
+	 			'rewrite' => array( 'with_front' => false, 'slug' => 'news'),
+	 			'capability_type' => 'post',
+	 		 	'publicly_queryable' => true,
+	   			'has_archive' => true, 
+	    		'hierarchical' => true,
+	    		'exclude_from_search' => false,
+	    		'menu_position' => null,
+	    		'supports' => array('title', 'thumbnail', 'editor'),
+	    		'plural' => 'News'
+	   		)
+	   	);		   		   	
+
+	 	// global $wp_rewrite;
+		// $wp_rewrite->flush_rules();
+}}
+
 
 add_action("gform_field_standard_settings", "custom_gform_standard_settings", 10, 2);
 function custom_gform_standard_settings($position, $form_id){
