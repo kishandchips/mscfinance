@@ -85,11 +85,11 @@ cc.initialise({
 				</div>
 					<?php wp_nav_menu( array( 'theme_location' => 'header_top_nav', 'menu_class' => 'clearfix menu', 'container' => false ) ); ?>
 					<div class="phones">
-						Freephone: 
-						<span class="rTapNumber72710">07595292684</span>	
+						International: 
+						<span class="rTapNumber72713">+44 (0)208 621 0050</span>
 						<br>
-						International:
-					  	<span class="rTapNumber72713">07595292684</span>			
+						Freephone:
+					  	<span class="rTapNumber72710">07595 292 684</span>		
 					</div>				
 			</div>		
 		</div>
