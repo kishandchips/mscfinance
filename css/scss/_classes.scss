@@ -456,7 +456,7 @@ hr {
 				left: 50%;
 				margin-left: -0.4em;
 				margin-top: -0.5em;
-				@extend [data-icon]:before;
+				// @extend [data-icon]:before;
 			}
 
 			
@@ -465,14 +465,14 @@ hr {
 
 		.prev-btn {
 			&:before {
-				@extend .icon-chevron-left:before;
+				// @extend .icon-chevron-left:before;
 			}
 		}
 
 
 		.next-btn {
 			&:before {
-				@extend .icon-chevron-right:before;
+				// @extend .icon-chevron-right:before;
 			}
 		}
 	}

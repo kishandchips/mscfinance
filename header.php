@@ -77,7 +77,7 @@ cc.initialise({
 		<div class="container">
 			<div id="top-nav" class="clearfix">
 				<div class="socials">
-				<div class="fb-like" data-href="https://www.facebook.com/henleymba" data-layout="button_count"></div>
+				<div class="fb-like" data-href="https://www.facebook.com/ICMACentre" data-layout="button_count"></div>
 					<div class="g-plusone" data-size="medium" data-href="<?php bloginfo( 'url' ); ?>"></div>
 					<div class="tweet-button"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -104,10 +104,10 @@ cc.initialise({
 			</div>		
 		</header><!-- #masthead -->
 
-		<?php if(get_field('slideshow', $curr_page_id)): ?>
+		<?php if(get_field('slideshow')): ?>
 		<div id="header-image" class="container clearfix">
 			<?php
-				$values = get_field('slideshow', $curr_page_id);
+				$values = get_field('slideshow');
 				$number_of_slides = count($values);
 				?>
 				<?php if($number_of_slides > 1): ?>
@@ -116,7 +116,7 @@ cc.initialise({
 							<div class="inner">
 								<div class="scroller-mask">						
 									<?php $i = 0; ?>
-									<?php while (the_repeater_field('slideshow', $curr_page_id)) : ?>					
+									<?php while (the_repeater_field('slideshow')) : ?>					
 									<div class="scroll-item <?php if($i == 0) echo 'current'; ?>" data-id="<?php echo $i;?>">
 										<img class="scale" src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('title'); ?>">
 										<span class="title <?php the_sub_field('title_position'); ?>" style="background-color: <?php the_sub_field('title_background_colour'); ?>;">
@@ -134,7 +134,7 @@ cc.initialise({
 						</div>
 					</div><!-- #homepage-scroller -->			
 				<?php else: ?>
-					<?php while (the_repeater_field('slideshow', $curr_page_id)) : ?>		
+					<?php while (the_repeater_field('slideshow')) : ?>		
 						<div class="scroll-item">
 							<img class="scale" src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('title'); ?>">
 							<span class="title <?php the_sub_field('title_position'); ?>" style="background-color: <?php the_sub_field('title_background_colour'); ?>;">
